@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connexion | ESORSEM FIOR 2026</title>
+<title>Page de connexion | ESORSEM FIOR EM 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -82,9 +82,9 @@ button:hover{background:var(--thalweg);}
 </head>
 <body>
 <div class="card">
-  <div class="brand">ESORSEM · FIOR 2026</div>
-  <h1>Accès protégé</h1>
-  <div class="subtitle">Topographie — Généralités</div>
+  <div class="brand">ESORSEM - FIOR EM 2026</div>
+  <h1>Accès sécurisé par mot de passe</h1>
+  <div class="subtitle">Outil interactif de révision</div>
   <div id="errorBox"></div>
   <form id="loginForm" method="POST" action="/login">
     <label for="password">Mot de passe</label>
@@ -97,7 +97,7 @@ button:hover{background:var(--thalweg);}
 const params = new URLSearchParams(window.location.search);
 if (params.get('error') === '1') {
   document.getElementById('errorBox').innerHTML =
-    '<div class="error">Mot de passe incorrect. Réessaie.</div>';
+    '<div class="error">Mot de passe incorrect bg, réessaie stp.</div>';
 }
 </script>
 </body>
