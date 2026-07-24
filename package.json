@@ -1,0 +1,13 @@
+{
+  "name": "cours-topo-protege",
+  "version": "1.0.0",
+  "description": "Serveur Express avec page de connexion pour proteger le cours de topographie",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  }
+}
