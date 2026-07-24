@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion | ESORSEM FIOR 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#e9e1cb;
+  --paper-light:#f3ecd8;
+  --ink:#2c2820;
+  --ink-soft:#5a5340;
+  --thalweg:#2b5f7a;
+  --crest:#a2402b;
+  --forest:#4b6b40;
+  --brass:#a9822f;
+  --brass-light:#c9a24f;
+  --rule:#b9ab84;
+  --paper-shadow: rgba(44,40,32,.18);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Source Serif 4', serif;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(75,107,64,.06) 0, transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(43,95,122,.06) 0, transparent 40%);
+}
+h1{font-family:'Oswald', sans-serif; text-transform:uppercase; letter-spacing:.03em; margin:0 0 4px;}
+.card{
+  width:min(90vw, 380px);
+  background:var(--paper-light);
+  border:2px solid var(--ink);
+  box-shadow:0 10px 30px var(--paper-shadow);
+  padding:32px 28px;
+}
+.brand{font-family:'IBM Plex Mono', monospace; font-size:.72rem; letter-spacing:.12em; color:var(--brass); margin-bottom:8px;}
+.subtitle{color:var(--ink-soft); font-size:.95rem; margin-bottom:24px;}
+label{display:block; font-family:'Oswald', sans-serif; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:6px;}
+input[type="password"]{
+  width:100%;
+  padding:12px 14px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:1rem;
+  border:2px solid var(--rule);
+  background:var(--paper);
+  color:var(--ink);
+  margin-bottom:18px;
+}
+input[type="password"]:focus{outline:none; border-color:var(--thalweg);}
+button{
+  width:100%;
+  padding:13px;
+  border:none;
+  background:var(--ink);
+  color:var(--paper-light);
+  font-family:'Oswald', sans-serif;
+  font-size:.9rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+button:hover{background:var(--thalweg);}
+.error{
+  background:rgba(162,64,43,.12);
+  border-left:3px solid var(--crest);
+  color:var(--crest);
+  padding:10px 12px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.85rem;
+  margin-bottom:18px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="brand">ESORSEM · FIOR 2026</div>
+  <h1>Accès protégé</h1>
+  <div class="subtitle">Topographie — Généralités</div>
+  <div id="errorBox"></div>
+  <form id="loginForm" method="POST" action="/login">
+    <label for="password">Mot de passe</label>
+    <input type="password" id="password" name="password" autofocus required>
+    <button type="submit">Se connecter</button>
+  </form>
+</div>
+<script>
+// Affiche un message d'erreur si redirection ?error=1
+const params = new URLSearchParams(window.location.search);
+if (params.get('error') === '1') {
+  document.getElementById('errorBox').innerHTML =
+    '<div class="error">Mot de passe incorrect. Réessaie.</div>';
+}
+</script>
+</body>
+</html>
